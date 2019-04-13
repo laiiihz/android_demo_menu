@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <Button
+            android:text="Open Dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_dlg" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+    <TextView
+            android:text="长按打开上下文菜单"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView_open" android:textSize="36sp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/button_dlg"/>
+    <Button
+            android:text="ACTIONBAR SHOW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_act_show" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView_open" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+    <Button
+            android:text="ACTIONBAR HIDE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_act_hide" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/button_act_show" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+    <fragment
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:name="tech.laihz.android_demo_menu.SingleFragment"
+            android:id="@+id/fragment2"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/button_act_hide" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/et_input" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/fragment2" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:hint="INPUT" android:focusable="true"
+            android:focusableInTouchMode="true"/>
+    <CheckBox
+            android:text="if checked ,do not send data to UI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBox_ui" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/et_input" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_result" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox_ui" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:textSize="24sp"/>
+</android.support.constraint.ConstraintLayout>

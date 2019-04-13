@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Menu_item1"/>
+    <item android:title="Menu_item2"/>
+    <item android:title="Menu_item3"/>
+    <item android:title="Settings" android:id="@+id/item_settings"/>
+</menu>

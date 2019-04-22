@@ -26,6 +26,21 @@ class MainActivity : AppCompatActivity() {
         setTheme(themeMain)
         setContentView(R.layout.activity_main)
 
+        textViewContextMe.setOnLongClickListener {
+            textViewContextMe.showContextMenu()
+        }
+
+        textViewContextMe.setOnCreateContextMenuListener { menu, v, menuInfo ->
+            val popMenu=PopupMenu(this,v)
+            val menuGets=popMenu.menu
+            menuGets.add(Menu.NONE,0,0,"menu1")
+            var submenu=menuGets.addSubMenu("subMenu")
+            submenu.add(Menu.NONE,0,0,"sub1")
+            submenu.add(Menu.NONE,1,1,"sub2")
+            menuGets.add(Menu.NONE,1,1,"menu2")
+            popMenu.show()
+        }
+
         button_dlg.setOnClickListener {
             val ad:AlertDialog.Builder = AlertDialog.Builder(this)
             ad.setTitle("Title")
@@ -40,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         textView_open.setOnCreateContextMenuListener { _, v, _ ->
-            var popMenu=PopupMenu(this,v)
+            val popMenu=PopupMenu(this,v)
             popMenu.inflate(R.menu.context_menu)
             popMenu.show()
         }
@@ -92,6 +107,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu,menu)
+//        menu!!.add(0,0,0,"menuOne")
+//        menu.add(0,1,1,"menuTwo")
+//        menu.add(0,2,2,"menuThree")
+
         return true
     }
 
